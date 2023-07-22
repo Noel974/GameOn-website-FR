@@ -1,232 +1,166 @@
 export function modalForm() {
-    //Déclaration de mes variables first et firstNameError :
-    let firstName = document.querySelector("#first");
-    let firstNameError = document.querySelector("#firstNameError");
 
 
-    //Condition regex pour le contrôle du champs firstName :
-    function firstNameControle() {
 
-        if (/^([A-Za-z]{2,20})?([-]{0,1})?([A-Za-z]{2,20})$/.test(firstName.value)) {
-            firstName.style.border = "solid 2px green";
-            firstNameError.textContent = "Champ Valide";
-            firstNameError.style.color = 'green';
-            firstNameError.style.fontSize = '15px';
-            firstNameError.style.marginBottom = '5px';
+};
+    //Condition regex pour le contrÃ´le du champs firstName :
+    export function firstNameControle(pfirstName, pfirstNameError) {
+
+        if (/^([A-Za-z]{2,20})?([-]{0,1})?([A-Za-z]{2,20})$/.test(pfirstName.value)) {
+            pfirstName.style.border = "solid 2px green";
+            pfirstNameError.textContent = "Champ Valide";
+            pfirstNameError.style.color = 'green';
+            pfirstNameError.style.fontSize = '15px';
+            pfirstNameError.style.marginBottom = '5px';
             return true;
         }
 
         else {
-            firstName.style.border = "solid 2px red";
-            firstNameError.textContent = "Veuillez rentrer deux caractères minimum";
-            firstNameError.style.color = 'red';
-            firstNameError.style.fontSize = '15px';
-            firstNameError.style.marginBottom = '5px';
+            pfirstName.style.border = "solid 2px red";
+            pfirstNameError.textContent = "Veuillez rentrer deux caractï¿½res minimum";
+            pfirstNameError.style.color = 'red';
+           pfirstNameError.style.fontSize = '15px';
+            pfirstNameError.style.marginBottom = '5px';
             return false;
         }
 
-    }
+    };
 
-    //AddEventListener pour le controle de l'input firstName :
-    firstName.addEventListener('change', () => {
-        firstNameControle();
-    });
+    //Condition regex pour le contrÃ´le du champs lastName :
+    export function lastNameControle(plastName,plastNameError) {
 
-
-    //Déclaration de mes variable lastName et lastNameError :
-    let lastName = document.querySelector("#last");
-    let lastNameError = document.querySelector("#lastNameError");
-
-
-    //Condition regex pour le contrôle du champs lastName :
-    function lastNameControle() {
-
-        if (/^([A-Za-z]{2,20})?([-]{0,1})?([A-Za-z]{2,20})$/.test(lastName.value)) {
-            lastName.style.border = "solid 2px green";
-            lastNameError.textContent = "Champ Valide";
-            lastNameError.style.color = 'green';
-            lastNameError.style.fontSize = '15px';
-            lastNameError.style.marginBottom = '5px';
+        if (/^([A-Za-z]{2,20})?([-]{0,1})?([A-Za-z]{2,20})$/.test(plastName.value)) {
+            plastName.style.border = "solid 2px green";
+            plastNameError.textContent = "Champ Valide";
+            plastNameError.style.color = 'green';
+            plastNameError.style.fontSize = '15px';
+            plastNameError.style.marginBottom = '5px';
             return true;
         }
 
         else {
-            lastName.style.border = "solid 2px red";
-            lastNameError.textContent = "Veuillez rentrer deux caractères minimum";
-            lastNameError.style.color = 'red';
-            lastNameError.style.fontSize = '15px';
-            lastNameError.style.marginBottom = '5px';
+            plastName.style.border = "solid 2px red";
+            plastNameError.textContent = "Veuillez rentrer deux caractï¿½res minimum";
+            plastNameError.style.color = 'red';
+            plastNameError.style.fontSize = '15px';
+            plastNameError.style.marginBottom = '5px';
             return false;
         }
 
-    }
+    };
 
-    //AddEventListener pour le controle de l'input lastName :
-    lastName.addEventListener('change', () => {
-        lastNameControle();
-    });
+    //Condition regex pour le contrï¿½le du champs email :
+    export function emailControle( pemail, pemailError) {
 
-    //Déclaration de mes variables email et emailError :
-    let email = document.querySelector("#email");
-    let emailError = document.querySelector("#emailError");
-
-
-    //Condition regex pour le contrôle du champs email :
-    function emailControle() {
-
-        if (/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email.value)) {
-            email.style.border = "solid 2px green";
-            emailError.textContent = "Champ Valide";
-            emailError.style.fontSize = '15px';
-            emailError.style.color = 'green';
-            emailError.style.marginBottom = '5px';
+        if (/^(([^<>()\[\]\\.,;:\s,@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email.value)) {
+            pemail.style.border = "solid 2px green";
+            pemailError.textContent = "Champ Valide";
+            pemailError.style.fontSize = '15px';
+            pemailError.style.color = 'green';
+            pemailError.style.marginBottom = '5px';
             return true;
         }
 
         else {
-            email.style.border = "solid 2px red";
-            emailError.textContent = "Veuillez rentrer une adresse email valide";
-            emailError.style.fontSize = '15px';
-            emailError.style.color = 'red';
-            emailError.style.marginBottom = '5px';
-            return false;
-        }
-    }
-
-
-    //AddEventListener pour le controle de l'input email :
-    email.addEventListener('change', () => {
-        emailControle();
-    });
-
-    //Déclaration de mes variables birthdate et birthdateError :
-    let birthdate = document.querySelector("#birthdate");
-    let birthdateError = document.querySelector("#birthdateError");
-
-
-    //Condition regex pour le contrôle du champs date :
-    function birthdateControle() {
-
-        if (/^([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))$/.test(birthdate.value)) {
-            birthdate.style.border = "solid 2px green";
-            birthdateError.textContent = "Champ Valide";
-            birthdateError.style.fontSize = '15px';
-            birthdateError.style.marginBottom = '10px';
-            birthdateError.style.color = 'green';
-            return true;
-        }
-
-        else {
-            birthdate.style.border = "solid 2px red";
-            birthdateError.textContent = "Vous devez entrer votre date de naissance.";
-            birthdateError.style.fontSize = '15px';
-            birthdateError.style.marginBottom = '10px';
-            birthdateError.style.color = 'red';
-            return false;
-        }
-
-    }
-
-    //AddEventListener pour le controle de l'input birthdate :
-    birthdate.addEventListener('change', () => {
-        birthdateControle();
-    });
-
-    //Déclaration de mes constantes quantity et quantityError :
-    let quantity = document.querySelector("#quantity");
-    let quantityError = document.querySelector("#quantityError");
-
-    //Condition regex pour le contrôle du champs quantity :
-    function quantityControle() {
-
-        if (quantity.value >= 0) {
-            quantity.style.border = "solid 2px green";
-            quantityError.textContent = "Champ Valide";
-            quantityError.style.color = "green";
-            quantityError.style.fontSize = "15px";
-            quantityError.style.marginBottom = '10px';
-            return true;
-        }
-
-
-        else {
-            quantity.style.border = "solid 2px red";
-            quantityError.textContent = "Merci d'indiquer le nombre de tournois";
-            quantityError.style.fontSize = '15px';
-            quantityError.style.marginBottom = '10px';
-            quantityError.style.color = 'red';
-            return false;
-        }
-    }
-
-    //AddEventListener pour le controle de l'input quantity :
-    quantity.addEventListener('change', () => {
-        quantityControle();
-    });
-
-
-    //Déclaration de mes variables location et locationError :
-    let checkLocation = document.getElementsByName("location");
-    let locationError = document.querySelector("#locationError");
-
-
-    //Condition pour le contrôle du champs check-box location :
-    function checkboxLocationControl() {
-
-        for (let i = 0; i < checkLocation.length; i++) {
-
-            if (checkLocation[i].checked) {
-                locationError.textContent = 'Champ Valide';
-                locationError.style.color = 'green';
-                locationError.style.fontSize = '15px';
-                locationError.style.marginBottom = '10px';
-                return true;
-            }
-
-        }
-
-        locationError.textContent = 'Champ Invalide';
-        locationError.style.color = 'red';
-        locationError.style.fontSize = '15px';
-        locationError.style.marginBottom = '10px';
-        return false;
-
-    }
-
-    //AddEventListener pour le controle de l'input checkLocation :
-    checkLocation.forEach((chekLocationInput) => chekLocationInput.addEventListener('change', function () {
-        checkboxLocationControl();
-    }));
-
-    //Déclaration de mes variables checkbox1 et generalCheckboxError :
-    let checkbox1 = document.querySelector("#checkbox1");
-    let conditionCheckboxError = document.querySelector("#generalCheckboxError");
-
-
-    //Condition pour le contrôle du champs checkbox :
-    function conditionCheckboxControle() {
-        if (checkbox1.checked) {
-            checkbox1.style.border = "solid 2px green";
-            conditionCheckboxError.textContent = "Champs Valide";
-            conditionCheckboxError.style.color = "green";
-            conditionCheckboxError.style.fontSize = "15px";
-            conditionCheckboxError.style.marginBottom = '10px';
-            return true;
-
-        } else {
-            checkbox1.style.border = "solid 2px red";
-            conditionCheckboxError.textContent = "Merci d'accepter les conditions d'utilisations";
-            conditionCheckboxError.style.fontSize = '15px';
-            conditionCheckboxError.style.marginBottom = '10px';
-            conditionCheckboxError.style.color = 'red';
+            pemail.style.border = "solid 2px red";
+            pemailError.textContent = "Veuillez rentrer une adresse email valide";
+            pemailError.style.fontSize = '15px';
+            pemailError.style.color = 'red';
+            pemailError.style.marginBottom = '5px';
             return false;
         }
     };
 
 
-    //AddEventListener pour le controle de l'input checkbox1 :
-    checkbox1.addEventListener('change', () => {
-        conditionCheckboxControle();
-    });
+    //Condition regex pour le contrï¿½le du champs date :
+    export function birthdateControle(pbirthdate,pbirthdateError) {
 
-}
+        if (/^([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))$/.test(pbirthdate.value)) {
+            pbirthdate.style.border = "solid 2px green";
+            pbirthdateError.textContent = "Champ Valide";
+            pbirthdateError.style.fontSize = '15px';
+            pbirthdateError.style.marginBottom = '10px';
+            pbirthdateError.style.color = 'green';
+            return true;
+        }
+
+        else {
+            pbirthdate.style.border = "solid 2px red";
+            pbirthdateError.textContent = "Vous devez entrer votre date de naissance.";
+            pbirthdateError.style.fontSize = '15px';
+            pbirthdateError.style.marginBottom = '10px';
+            pbirthdateError.style.color = 'red';
+            return false;
+        }
+
+    };
+
+
+    
+    //Condition regex pour le contrï¿½le du champs quantity :
+    export function quantityControle(pquantity,pquantityError) {
+
+        if (pquantity.value >= 0) {
+            pquantity.style.border = "solid 2px green";
+            pquantityError.textContent = "Champ Valide";
+            pquantityError.style.color = "green";
+            pquantityError.style.fontSize = "15px";
+            pquantityError.style.marginBottom = '10px';
+            return true;
+        }
+
+
+        else {
+            pquantity.style.border = "solid 2px red";
+            pquantityError.textContent = "Merci d'indiquer le nombre de tournois";
+            pquantityError.style.fontSize = '15px';
+            pquantityError.style.marginBottom = '10px';
+            pquantityError.style.color = 'red';
+            return false;
+        }
+    };
+
+    //Condition pour le contrï¿½le du champs check-box location :
+     export function checkboxLocationControl(pcheckLocation,plocationError) {
+
+        for (let i = 0; i < pcheckLocation.length; i++) {
+
+            if (pcheckLocation[i].checked) {
+                plocationError.textContent = 'Champ Valide';
+                plocationError.style.color = 'green';
+                plocationError.style.fontSize = '15px';
+                plocationError.style.marginBottom = '10px';
+                return true;
+            }
+
+        }
+
+        plocationError.textContent = 'Champ Invalide';
+        plocationError.style.color = 'red';
+        plocationError.style.fontSize = '15px';
+        plocationError.style.marginBottom = '10px';
+        return false;
+
+    };
+
+    //Condition pour le contrï¿½le du champs checkbox :
+    export function conditionCheckboxControle( pcheckbox1,pconditionCheckboxError) {
+        if (pcheckbox1.checked) {
+            pcheckbox1.style.border = "solid 2px green";
+            pconditionCheckboxError.textContent = "Champs Valide";
+            pconditionCheckboxError.style.color = "green";
+            pconditionCheckboxError.style.fontSize = "15px";
+            pconditionCheckboxError.style.marginBottom = '10px';
+            return true;
+
+        } else {
+            pcheckbox1.style.border = "solid 2px red";
+            pconditionCheckboxError.textContent = "Merci d'accepter les conditions d'utilisations";
+            pconditionCheckboxError.style.fontSize = '15px';
+            pconditionCheckboxError.style.marginBottom = '10px';
+            pconditionCheckboxError.style.color = 'red';
+            return false;
+        }
+    };
+
+
