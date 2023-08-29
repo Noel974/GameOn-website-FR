@@ -1,13 +1,21 @@
- export function editNav() {
-    // Sélectionne l'élément avec l'ID "myTopnav"
-    var x = document.getElementById("myTopnav");
+// Fonction pour ouvrir et fermer le menu responsive
+export function editNav() {
+    const iconLink = document.querySelector("a.icon");
+    const NavBar = document.getElementById("myTopnav");
 
-    // Vérifie si la classe de l'élément est "topnav"
-    if (x.className === "topnav") {
-        // Si c'est le cas, ajoute la classe "responsive" à l'élément
-        x.className += " responsive";
+    if (NavBar.className === "topnav") {
+        NavBar.className += " responsive";
     } else {
-        // Sinon, réinitialise la classe de l'élément à "topnav"
-        x.className = "topnav";
+        NavBar.className = "topnav";
+        NavBar.classList.remove('responsive');
     }
 }
+
+// Fonction qui ferme le menu responsive au-delÃ  de 800px 
+window.addEventListener('resize', () => {
+    const NavBar = document.getElementById("myTopnav");
+    
+    if (window.innerWidth > 800) {
+        NavBar.classList.remove('responsive');
+    }
+});

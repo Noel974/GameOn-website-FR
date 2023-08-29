@@ -1,7 +1,5 @@
 export function modalForm() {
 
-
-
 };
     //Condition regex pour le contrôle du champs firstName :
     export function firstNameControle(pfirstName, pfirstNameError) {
