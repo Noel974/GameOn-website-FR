@@ -1,6 +1,7 @@
 // Fonction pour ouvrir et fermer le menu responsive
 export function editNav() {
     const iconLink = document.querySelector("a.icon");
+    iconLink.addEventListener("click", editNav);
     const NavBar = document.getElementById("myTopnav");
 
     if (NavBar.className === "topnav") {

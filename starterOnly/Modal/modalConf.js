@@ -63,7 +63,9 @@ export function modalConf() {
         });
 
         // Vérifie si toutes les validations renvoient true
-        if (firstNameControle(firstName, firstNameError) && lastNameControle(lastName, lastNameError) && emailControle(email, emailError) && birthdateControle(birthdate, birthdateError) && quantityControle(quantity, quantityError) && checkboxLocationControl(checkLocation, locationError) && conditionCheckboxControle(checkbox1, conditionCheckboxError)) {
+        if (firstNameControle(firstName, firstNameError) && lastNameControle(lastName, lastNameError) && emailControle(email, emailError) && birthdateControle(birthdate, birthdateError) 
+        && quantityControle(quantity, quantityError) && checkboxLocationControl(checkLocation, locationError) 
+    && conditionCheckboxControle(checkbox1, conditionCheckboxError)) {
             // Si c'est le cas, affiche la confirmation et masque le formulaire
             modalConfirmation.style.display = "block";
             form.style.display = 'none';

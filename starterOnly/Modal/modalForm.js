@@ -92,13 +92,11 @@ export function modalForm() {
         }
 
     };
-
-
     
     //Condition regex pour le contr�le du champs quantity :
     export function quantityControle(pquantity,pquantityError) {
 
-        if (pquantity.value >= 0) {
+        if (pquantity.value > 0) {
             pquantity.style.border = "solid 2px green";
             pquantityError.textContent = "Champ Valide";
             pquantityError.style.color = "green";
